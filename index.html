@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../styles.css" />
     <link rel="icon" href="../../assets/pshslogo.png" sizes="32x32" type="image/png">
-    <script src="script.js" defer></script>
    <style>
     body{
         padding: 25px;
@@ -45,22 +44,22 @@
         <fieldset>
           <legend>Your Credentials</legend><br/>
           <label> Student Id: 
-            <input type="number" name="uname" id="uname" required />
+            <input type="number" name="number" id="number" onfocus="changeColor(this)" onblur="changeBlur(this)" required />
             </label><br/><br/>
           <label> Full Name: 
-            <input type="text" name="uname" id="uname" required />
+            <input type="text" name="uname" id="uname" onfocus="changeColor(this)" onblur="changeBlur(this)" required />
           </label><br/><br/>
           <label> Date Of Birth :
-            <input type="date" name="dob" id="dob" />
+            <input type="date" name="date" id="date" onfocus="changeColor(this)" onblur="changeBlur(this)" required/>
           </label><br/><br/>
           <label> Email address: 
-            <input type="email" name="uname" id="uname" required />
+            <input type="email" name="email" id="email" required onfocus="changeColor(this)" onblur="changeBlur(this)"/>
             </label><br/><br/>
             <label> Mobile Phone: 
-                <input type="number" name="uname" id="uname" required />
+                <input type="number" name="phonenumber" id="phonenumber" required onfocus="changeColor(this)" onblur="changeBlur(this)"/>
                 </label><br/><br/>
             <label for="grade">Grade Level:</label>
-            <select id="grade" name="grade">
+            <select id="grade" name="grade" onfocus="changeColor(this)" onblur="changeBlur(this)" required>
                 <option value="">Options</option>
                 <option value="grade7">Grade 7</option>
                 <option value="grade8">Grade 8</option>
@@ -71,12 +70,11 @@
             </select>
             <br/><br/>
           <label> Intern/Extern:
-            <input type="radio" name="intern" value="intern" /> Intern
-            <input type="radio" name="extern" value="extern" /> Extern
+            <input type="radio" name="status" value="intern" id="status" onfocus="changeColor(this)" onblur="changeBlur(this)" required/> Intern
+            <input type="radio" name="status" value="extern" id="status" onfocus="changeColor(this)" onblur="changeBlur(this)" required/> Extern
           </label><br/><br/>
-          <label> 
             <label for="club">Preferred Organization / Club:</label>
-            <select id="club" name="club">
+            <select id="club" name="club" onfocus="changeColor(this)" onblur="changeBlur(this)" required>
                 <option value="">Options</option>
                 <option value="club1">Badminton Club</option>
                 <option value="club2">Basketball Club</option>
@@ -86,7 +84,7 @@
             </select>
             </label><br/><br/>
           <label> Why do you want to join : 
-            <textarea name="about" id="about">
+            <textarea name="about" id="about" onfocus="changeColor(this)" onblur="changeBlur(this)" required>
             
             </textarea>
           </label><br/><br/>
@@ -98,5 +96,6 @@
         </fieldset> 
       </form>
     </section>
+    <script src="index.js"></script>
   </body>
 </html>
