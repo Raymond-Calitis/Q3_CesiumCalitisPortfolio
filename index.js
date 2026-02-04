@@ -7,7 +7,7 @@ const form = document.getElementById("dForm"); // get the HTML form from q3ge2Me
 
 // event handler on the submit button instead of onsubmit on the button itself
 form.addEventListener("submit", function(e) { // assign an event handler of submit to the form
-    //e.preventDefault(); // prevent page reload because forms gets submitted
+    e.preventDefault(); // prevent page reload because forms gets submitted
 
     if (confirm("Sure You Want To Save Your Work?")) {   
         // use a predefined class to create an object of data
@@ -27,7 +27,17 @@ form.addEventListener("submit", function(e) { // assign an event handler of subm
         console.log(accountList) // to check all the account information if it will be saved correctly
         acctString = JSON.stringify(accountList) // convert object into string, as a requirement of localStorage
         localStorage.setItem("accounts", acctString) // save on the user's computer
-        form.submit();
+        
+        let signupString = localStorage.getItem("signups")
+        let signupList = []
+        if (signupString) {
+            signupList = JSON.parse(signupString)
+        }
+        signupList.push(obj)
+        localStorage.setItem("signups", JSON.stringify(signupList))
+        
+        form.reset();
+        alert("Sign-up saved successfully!");
     }
   });
 
@@ -39,12 +49,13 @@ form.addEventListener("reset", function(e) { //
   }
 });
 
+document.getElementById("viewBtn").addEventListener("click", function() {
+    window.location.href = "viewSignUps.html";
+});
+
 function changeColor(ele) {
   ele.style.backgroundColor = "lightgreen";
 } 
 function changeBlur(ele) {
   ele.style.backgroundColor = "white";
 }
-
-
-// called when user is on the input field

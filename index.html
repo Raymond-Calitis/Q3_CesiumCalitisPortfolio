@@ -7,7 +7,6 @@
     <meta name="keywords" content="HTML Forms">
     <meta name="author" content="AL Mendoza">
     <title>Sample Form</title>
-    <!-- updated external css link to show how to share it between repository -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../styles.css" />
     <link rel="icon" href="../../assets/pshslogo.png" sizes="32x32" type="image/png">
@@ -40,7 +39,7 @@
   <body>
     <section>
       <h1 class="title">Sign-up Page</h1>
-      <form id="dForm" action="registered.html" method="get">
+      <form id="dForm" method="post">
         <fieldset>
           <legend>Your Credentials</legend><br/>
           <label> Student Id: 
@@ -76,11 +75,13 @@
             <label for="club">Preferred Organization / Club:</label>
             <select id="club" name="club" onfocus="changeColor(this)" onblur="changeBlur(this)" required>
                 <option value="">Options</option>
-                <option value="club1">Badminton Club</option>
-                <option value="club2">Basketball Club</option>
-                <option value="club3">Volleyball Club</option>
-                <option value="club4">Ultimate Frisbee Club</option>
-                <option value="club5">Bake Club</option>
+                <option value="Badminton Club">Badminton Club</option>
+                <option value="Basketball Club">Basketball Club</option>
+                <option value="Volleyball Club">Volleyball Club</option>
+                <option value="Ultimate Frisbee Club">Ultimate Frisbee Club</option>
+                <option value="Bake Club">Bake Club</option>
+                <option value="Computron">Computron</option>
+                <option value="Himig Agham">Himig Agham</option>
             </select>
             </label><br/><br/>
           <label> Why do you want to join : 
@@ -93,6 +94,7 @@
           <legend>Action Buttons</legend>
           <button type="submit"> Accept </button>
           <input type="reset" value=" Clear " />
+          <button type="button" id="viewBtn">View Signups</button>
         </fieldset> 
       </form>
     </section>
